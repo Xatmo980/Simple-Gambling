@@ -50,19 +50,6 @@ Gamble.GoldSetAmount = function(pid, gold)
     end
 end
 
-Gamble.GoldRemoveAmount = function(pid, Sub)
-    local goldIndex
-
-    if tableHelper.containsKeyValue(Players[pid].data.inventory, "refId", "gold_001", true) then
-        goldIndex = tableHelper.getIndexByNestedKeyValue(Players[pid].data.inventory, "refId", "gold_001")
-        local Val = gold - Sub
-        Players[pid].data.inventory[goldIndex].count = Val
-        Players[pid]:Save()
-        Players[pid]:LoadInventory()
-        Players[pid]:LoadEquipment()
-    end
-end
-
 Gamble.SetBid = function(pid)
        tes3mp.InputDialog(pid, BGuI, color.DarkOrange.."How Much Gold?","Enter the amount of gold")
 end
