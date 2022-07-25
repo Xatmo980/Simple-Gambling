@@ -1,0 +1,2 @@
+1. Add (TES3MP-Gambling.lua) to your server/scripts/custom folder
+2. Edit (customScripts.lua) and add Gamble = require("custom.TES3MP-Gambling")
