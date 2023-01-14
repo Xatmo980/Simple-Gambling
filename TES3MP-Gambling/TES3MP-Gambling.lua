@@ -98,6 +98,9 @@ customEventHooks.registerHandler("OnGUIAction", function(eventStatus, pid, idGui
               if BidAmount == nil then
                  tes3mp.MessageBox(pid, -1, "You can only post numbers!")
                  return
+              elseif BidAmount < 1 then
+		 tes3mp.MessageBox(pid, -1, "You can only post positive number!")
+                 return
               else
                  Gamble.Main(pid)
                  return
